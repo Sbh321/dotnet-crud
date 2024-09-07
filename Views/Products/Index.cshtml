@@ -1,0 +1,32 @@
+@model IEnumerable<Crud.Models.Product>
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h1>Products</h1>
+
+<p>
+    <a class="btn btn-primary" href="@Url.Action("Create", "Products")">Add New Product</a>
+</p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>
